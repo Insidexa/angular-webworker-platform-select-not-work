@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+                <input formControlName="path" required class="form-control">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="input-group">
+                <select formControlName="type" class="form-control">
+                    <option value="">select type</option>
+                    <option *ngFor="let t of types" [value]="t">{{ t.text }}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button [disabled]="form.invalid" class="btn btn-block btn-primary btn-sm" type="submit">Save</button>
+        </div>
+    </div>
+</form>
